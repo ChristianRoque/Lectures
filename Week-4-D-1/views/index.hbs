@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home</title>
+</head>
+<body>
+<h1>Hello {{name}} {{lastName}}!</h1>
+
+{{!-- {{#if address}}
+    <h2>This won't be displayed!!</h2>
+{{else}}
+  <h2>This will be displayed because the "address" property does not exists!!</h2>
+  <h1>Hello {{name}} {{lastName}}!</h1>
+{{#unless address}}
+  <h3>WARNING: We can't find the address!</h3>
+{{/unless}}
+{{/if}}  --}}
+
+{{#with address}}
+  <p>{{street}}, {{number}}</p>
+{{/with}}
+
+<ul>
+  {{#each cities}}
+    <li>{{@index}}: {{this}}</li>
+  {{else}}
+    <p>No cities yet!</p>
+  {{/each}}
+</ul>
+</body>
+</html>
